@@ -1,17 +1,25 @@
 import style from './style.css';
+import Header from '../../components/Header';
+import Main from '../../components/Main';
+import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../components/DataContext';
-import { useContext } from 'react';
 
 function MainScreenPage() {
 
-  const { user } = useContext(DataContext)
+  const { setActiveSignupPage, setActiveMainScreenPage } = useContext(DataContext)
 
-  console.log(user, 9)
+  useEffect(() => {
+    setActiveMainScreenPage(true)
+    setActiveSignupPage(false)
+
+  }, [setActiveMainScreenPage, setActiveSignupPage])
 
   return (
-    <div>
-      <h1>Welcome {user}!</h1>
-      Main Screen
+    <div className='main-screen-page'>
+      <Header />
+      <Main />
+
+
     </div>
   )
 

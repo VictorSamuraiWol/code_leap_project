@@ -1,0 +1,13 @@
+input {
+  color: var(--third-color);
+  height: 25px;
+  width: auto;
+  padding: 8px;
+  border: 2px solid var(--fourth-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--third-color);
+}

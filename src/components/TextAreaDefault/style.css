@@ -1,0 +1,12 @@
+textarea {
+  color: var(--third-color);
+  width: auto;
+  padding: 8px;
+  border: 2px solid var(--fourth-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: var(--third-color);
+}

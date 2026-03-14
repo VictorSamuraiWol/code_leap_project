@@ -1,32 +1,20 @@
 import style from './style.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataContext';
+import InputDefault from '../InputDefault';
+import LabelDefault from '../LabelDefault';
+import ButtonDefault from '../ButtonDefault';
 
 function Signup() {
 
-  const [styleButton, setStyleButton] = useState('signup-button')
-
-  const { setUser } = useContext(DataContext) 
-
-  // function that verify the change input
-  function onChangeName(e) {
-    if (e.target.value !== '') {
-      setStyleButton('new-signup-button')
-      setUser(e.target.value)
-
-    } else {
-      setStyleButton('signup-button')
-
-    }
-
-  }
+  const { styleButton, setStyleButton, setDigitInput } = useContext(DataContext) 
 
   // function that open the Main Screen Page 
   function openMainScreenPage() {
     let able;
 
-    if (styleButton === 'new-signup-button') {
+    if (styleButton === 'new-style-button') {
       able = '/MainScreenPage'
 
     }
@@ -35,26 +23,39 @@ function Signup() {
 
   }
 
+  function clickButton() {
+    setStyleButton('style-button')
+    setDigitInput(false)
+
+  }
+
   return (
     <div className='signup'>
       <div className='signup-div'>
         <h1>Welcome to CodeLeap Network!</h1>
 
-        <div className='signup-div-p-input'>
-          <p>Please enter your username</p>
-          <input
-            onChange={onChangeName}
-            placeholder='Victor Cardoso' 
+        <div className='signup-div-label-input'>
+          <LabelDefault forLabel='signup' nameLabel='Please enter your username'/>
+
+          <InputDefault 
+            placeholder='Victor Cardoso'
+            id='signup'
+            name='signup'
+            type='text'  
           />
+
         </div>
 
         <div className={'signup-div-button'}>
           <Link to={openMainScreenPage()}>
-            <button 
-              className={styleButton}>
-                ENTER
-            </button>
+            <ButtonDefault 
+              onClick={clickButton}
+              type='button' 
+              nameButton='ENTER'
+            />
+
           </Link>
+
         </div>
 
       </div>

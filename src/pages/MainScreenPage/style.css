@@ -1,0 +1,8 @@
+.main-screen-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--second-color);
+}
