@@ -1,6 +1,9 @@
 .main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   background-color: var(--first-color);
-  width: 40%;
+  width: 50%;
   padding: 24px;
 }
 

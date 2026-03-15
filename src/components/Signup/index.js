@@ -23,6 +23,7 @@ function Signup() {
 
   }
 
+  // function that active on click the button
   function clickButton() {
     setStyleButton('style-button')
     setDigitInput(false)

@@ -1,5 +1,6 @@
 textarea {
   color: var(--third-color);
+  line-height: 1.5;
   width: auto;
   padding: 8px;
   border: 2px solid var(--fourth-color);
@@ -8,5 +9,6 @@ textarea {
 }
 
 textarea::placeholder {
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: var(--third-color);
 }

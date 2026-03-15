@@ -1,5 +1,5 @@
 import style from './style.css';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const DataContext = createContext(); // Context
 
@@ -26,6 +26,7 @@ export default function DataProvider({ children }) { // Provider
   const [postApi, setPostApi] = useState(false)
 
   useEffect(() => {
+    // function that use GET method
     async function fetchData() {
       try {
         const res = await fetch("http://localhost:3001/codeLeapNetwork")
@@ -71,7 +72,7 @@ export default function DataProvider({ children }) { // Provider
     setPostApi
 
   }
-console.log(userContent,68, 'ok', 'i')
+
   return (        
     <DataContext.Provider
         value={value}

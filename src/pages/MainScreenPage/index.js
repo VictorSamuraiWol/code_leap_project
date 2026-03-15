@@ -1,7 +1,7 @@
 import style from './style.css';
 import Header from '../../components/Header';
 import Main from '../../components/Main';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { DataContext } from '../../components/DataContext';
 
 function MainScreenPage() {
@@ -18,9 +18,8 @@ function MainScreenPage() {
     <div className='main-screen-page'>
       <Header />
       <Main />
-
-
     </div>
+
   )
 
 }

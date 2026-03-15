@@ -9,7 +9,7 @@ import Cards from '../Cards';
 
 function Main() {
   
-  const { user, setStyleButton, digitInput, digitTextarea, inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, setPostApi } = useContext(DataContext)
+  const { user, setStyleButton, digitInput, setDigitInput, setDigitTextarea, digitTextarea, inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, setPostApi } = useContext(DataContext)
 
   useEffect(() => {
     if ((digitInput === true) && (digitTextarea === true)) {
@@ -22,12 +22,17 @@ function Main() {
 
   }, [digitInput, digitTextarea, setStyleButton])
 
+  // function that clean the input and textarea fields
   function clean() {
     setInputMainScreenPageValue('')
     setTextareaMainScreenPageValue('')
 
+    setDigitInput(false)
+    setDigitTextarea(false)
+
   }
 
+  // function that use POST method
   async function onSave(e) {
     e.preventDefault();
     let data = '';
@@ -52,7 +57,6 @@ function Main() {
         alert('Data successfully submitted!');
         setPostApi(true)
         clean()
-        setStyleButton('style-button')
 
       }
 
@@ -93,7 +97,8 @@ function Main() {
             id='content'
             valueTextarea={textareaMainScreenPageValue} 
             placeholder='Content here'
-            rows='5'
+            rows='6'
+            cols='40'
           />
         </div>
 
