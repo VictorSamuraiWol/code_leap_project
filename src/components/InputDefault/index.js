@@ -2,31 +2,45 @@ import style from './style.css';
 import { useContext } from 'react';
 import { DataContext } from '../DataContext';
 
-function InputDefault({ placeholder, id, nameInput, type, valueInput }) {
+function InputDefault({ placeholder, id, nameInput, type, valueInput, required, setNewTitle }) {
 
-  const { setUser, setStyleButton, activeSignupPage, activeMainScreenPage, setDigitInput, setInputMainScreenPageValue, digitInput, digitTextarea } = useContext(DataContext)
+  const { setUser, activeSignupPage, activeMainScreenPage, activeMainScreenModalEdit, setDigitInputSignup, 
+    setDigitInputMainScreen, setDigitInputMainScreenModalEdit, setInputMainScreenPageValue } = useContext(DataContext)
   
-  // function that verify the input change
+  // function that verify the input value
   function onChangeName(e) {
-    let value = e.target.value
+    const value = e.target.value
+    const signupButton = document.querySelector('#signupButton')
 
-    if ((activeSignupPage === true) && (e.target.value !== '')) {
+    if ((activeSignupPage === true) && (value !== '')) {
       setUser(value)
-      setStyleButton('new-style-button')
-      setDigitInput(true)
+      signupButton.classList.add('newSpecificStyleButton')
+      signupButton.classList.remove('specificStyleButton')
+      setDigitInputSignup(true)
 
-    } else if ((activeMainScreenPage === true) && (e.target.value !== '')) {
-      setDigitInput(true)
+    } else if ((activeSignupPage === true) && (value === '')) {
+      signupButton.classList.add('specificStyleButton')
+      signupButton.classList.remove('newSpecificStyleButton')
+      setDigitInputSignup(false)
+
+    } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (value !== '')) {
+      setDigitInputMainScreen(true)
       setInputMainScreenPageValue(value)
 
-    } else if ((activeMainScreenPage === true) && (e.target.value === '')) {
-      setDigitInput(false)
+    } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (value === '')) {
+      setDigitInputMainScreen(false)
       setInputMainScreenPageValue(value)
 
+    } else if ((activeMainScreenModalEdit === true) && (value !== '')) {
+      setDigitInputMainScreenModalEdit(true)
+      setNewTitle(value)
+    
+    } else if ((activeMainScreenModalEdit === true) && (value === '')) {
+      setDigitInputMainScreenModalEdit(false)
+      setNewTitle(value)
+    
     } else {
-      setStyleButton('style-button')
-      setDigitInput(false)
-      setInputMainScreenPageValue(value)
+      console.error('Something is wrong or more conditions are needed.')
 
     }
 
@@ -40,7 +54,7 @@ function InputDefault({ placeholder, id, nameInput, type, valueInput }) {
       name={nameInput} 
       type={type}
       value={valueInput}
-
+      required={required}
     />
     
   )

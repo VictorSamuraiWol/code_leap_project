@@ -2,25 +2,33 @@ import style from './style.css';
 import { DataContext } from '../DataContext';
 import { useContext } from 'react';
 
-function TextAreaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, cols }) {
+function TextareaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, cols, required, setNewContent }) {
 
-  const { activeMainScreenPage, setDigitTextarea, setTextareaMainScreenPageValue } = useContext(DataContext)
+  const { activeMainScreenPage, activeMainScreenModalEdit, setDigitTextareaMainScreen, setDigitTextareaMainScreenModalEdit, 
+    setTextareaMainScreenPageValue } = useContext(DataContext)
 
-  // function that verify the textarea change
+  // function that verify the textarea value
   function onChangeName(e) {
     let value = e.target.value
 
-    if ((activeMainScreenPage === true) && e.target.value !== '') {
-      setDigitTextarea(true)
+    if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && e.target.value !== '') {
+      setDigitTextareaMainScreen(true)
       setTextareaMainScreenPageValue(value)
 
-    } else if ((activeMainScreenPage === true) && e.target.value === '') {
-      setDigitTextarea(false)
+    } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && e.target.value === '') {
+      setDigitTextareaMainScreen(false)
       setTextareaMainScreenPageValue(value)
 
+    } else if ((activeMainScreenModalEdit === true) && (value !== '')) {
+      setDigitTextareaMainScreenModalEdit(true)
+      setNewContent(value)
+    
+    } else if ((activeMainScreenModalEdit === true) && (value === '')) {
+      setDigitTextareaMainScreenModalEdit(false)
+      setNewContent(value)
+  
     } else {
-      setDigitTextarea(false)
-      setTextareaMainScreenPageValue(value)
+      console.error('Something is wrong or more conditions are needed.')
 
     }
 
@@ -35,10 +43,11 @@ function TextAreaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, c
       value={valueTextarea}
       rows={rows}
       cols={cols}
+      required={required}
     />
 
   )
 
 }
 
-export default TextAreaDefault;
+export default TextareaDefault;

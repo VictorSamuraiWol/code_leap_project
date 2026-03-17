@@ -1,14 +1,11 @@
 import style from './style.css';
-import { useContext } from 'react';
-import { DataContext } from '../DataContext';
 
-function ButtonDefault({ onClick, type, nameButton }) {
-
-  const { styleButton } = useContext(DataContext)
+function ButtonDefault({ id, specificStyleButton, onClick, type, nameButton }) {
 
   return (
     <button 
-      className={styleButton} 
+      id={id}
+      className={specificStyleButton}
       onClick={onClick}
       type={type}
     >

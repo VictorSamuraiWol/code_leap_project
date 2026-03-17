@@ -1,38 +1,59 @@
 import style from './style.css';
 import InputDefault from '../InputDefault';
 import LabelDefault from '../LabelDefault';
-import TextAreaDefault from '../TextAreaDefault';
+import TextareaDefault from '../TextareaDefault';
 import ButtonDefault from '../ButtonDefault';
+import Cards from '../Cards';
 import { useContext, useEffect } from 'react';
 import { DataContext } from '../DataContext';
-import Cards from '../Cards';
 
 function Main() {
   
-  const { user, setStyleButton, digitInput, setDigitInput, setDigitTextarea, digitTextarea, inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, setPostApi } = useContext(DataContext)
+  const { user, digitInputMainScreen, setDigitInputMainScreen, digitTextareaMainScreen, setDigitTextareaMainScreen, 
+    inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, 
+    setPostApi, activeMainScreenPage, activeMainScreenModalEdit, digitInputMainScreenModalEdit, digitTextareaMainScreenModalEdit } = useContext(DataContext)
 
   useEffect(() => {
-    if ((digitInput === true) && (digitTextarea === true)) {
-      setStyleButton('new-style-button')
+    // function that check the input and textarea values 
+    function digitInputTextArea() {
+      const mainScreenButton = document.querySelector('#mainScreenButton')
+      const modalEditSaveButton = document.querySelector('#modalEditSaveButton')
 
-    } else {
-      setStyleButton('style-button')
-      
+      if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (digitInputMainScreen === true) && (digitTextareaMainScreen === true)) {
+        mainScreenButton?.classList.add('newSpecificStyleButton')
+        mainScreenButton?.classList.remove('specificStyleButton')
+  
+      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && ((digitInputMainScreen === false) || (digitTextareaMainScreen === false))) {
+        mainScreenButton?.classList.add('specificStyleButton')
+        mainScreenButton?.classList.remove('newSpecificStyleButton')
+  
+      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === true) && (digitInputMainScreenModalEdit === true) && (digitTextareaMainScreenModalEdit === true)) {
+        modalEditSaveButton?.classList.add('newSpecificStyleModalEditSaveButton')
+        modalEditSaveButton?.classList.remove('specificStyleButton')
+  
+      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === true) && ((digitInputMainScreenModalEdit === false) || (digitTextareaMainScreenModalEdit === false))) {
+        modalEditSaveButton?.classList.add('specificStyleButton')
+        modalEditSaveButton?.classList.remove('newSpecificStyleModalEditSaveButton')
+
+      }
+
     }
 
-  }, [digitInput, digitTextarea, setStyleButton])
+    digitInputTextArea()
+
+  }, [digitInputMainScreen, digitTextareaMainScreen, activeMainScreenPage, activeMainScreenModalEdit, digitInputMainScreenModalEdit, digitTextareaMainScreenModalEdit])
 
   // function that clean the input and textarea fields
   function clean() {
     setInputMainScreenPageValue('')
     setTextareaMainScreenPageValue('')
 
-    setDigitInput(false)
-    setDigitTextarea(false)
+    setDigitInputMainScreen(false)
+    setDigitTextareaMainScreen(false)
 
   }
 
-  // function that use POST method
+  // Function that uses POST method to create users in the API
   async function onSave(e) {
     e.preventDefault();
     let data = '';
@@ -92,7 +113,7 @@ function Main() {
             forLabel='content' 
             nameLabel='Content' 
           />
-          <TextAreaDefault
+          <TextareaDefault
             nameTextarea='content'
             id='content'
             valueTextarea={textareaMainScreenPageValue} 
@@ -103,9 +124,11 @@ function Main() {
         </div>
 
         <div className='main-content-card-create-button'>
-          <ButtonDefault 
+          <ButtonDefault
+            id='mainScreenButton'
             nameButton='Create' 
             type='submit'
+            specificStyleButton='specificStyleButton'
           />
         </div>
 

@@ -32,18 +32,6 @@
   cursor: default;
 }
 
-.card-title-edit-delete-icons {
-  display: flex;
-  gap: 16px;
-  padding: 24px;
-}
-
-.card-title-edit-delete-icons-icon {
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-}
-
 .card-user-date-content {
   display: flex;
   justify-content: center;

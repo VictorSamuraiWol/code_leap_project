@@ -1,11 +1,17 @@
 import style from './style.css';
+import Card from './Card';
 import { useContext } from 'react';
 import { DataContext } from '../DataContext';
-import Card from './Card';
 
 function Cards() {
 
-  const { userContent } = useContext(DataContext)
+  const { userContent, setCaptureUserCard } = useContext(DataContext)
+
+  // function that capture Id and date of the users
+  function setCaptureIdUserModal(user) {
+    setCaptureUserCard(user)
+
+  }
 
   return (
     <div className='container'>
@@ -14,6 +20,7 @@ function Cards() {
         .map((user) => (
           <Card 
             key={user.id}
+            onClick={() => setCaptureIdUserModal(user)}
             title={user.title} 
             username={user.username}
             date={user.date}

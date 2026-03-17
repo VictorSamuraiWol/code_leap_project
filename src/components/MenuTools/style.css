@@ -1,0 +1,14 @@
+.menutools {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+  width: auto;
+  padding: 24px;
+}
+
+.menutools-icons {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}

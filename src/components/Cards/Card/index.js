@@ -1,8 +1,7 @@
 import style from './style.css';
-import { AiOutlineDelete } from "react-icons/ai";
-import { FaRegEdit } from "react-icons/fa";
+import MenuTools from '../../MenuTools';
 
-function Card({ title, username, date, content }) {
+function Card({ title, username, date, content, onClick }) {
 
   // function that calcule the time
   function getTimeAgo(timestamp) {
@@ -21,19 +20,21 @@ function Card({ title, username, date, content }) {
   }
 
   return (
-    <div className='card'>
+    <div 
+      className='card' 
+      onClick={onClick}
+    >
       <div className='card-title-edit-delete'>
         <h1>{title}</h1>
-        <div className='card-title-edit-delete-icons'>
-          <AiOutlineDelete className='card-title-edit-delete-icons-icon' />
-          <FaRegEdit className='card-title-edit-delete-icons-icon' />
-        </div>
+        <MenuTools />
+
       </div>      
 
       <div className='card-user-date-content'>
         <div className='card-user-date-content-span-span'>
           <span className='card-user-date-content-span-span-username'>@{username}</span>
           <span className='card-user-date-content-span-span-date'>{getTimeAgo(date)}</span>
+
         </div>
 
         <div className='card-user-date-content-p'>{content}</div>

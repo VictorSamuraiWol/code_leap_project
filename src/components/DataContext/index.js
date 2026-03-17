@@ -7,15 +7,21 @@ export default function DataProvider({ children }) { // Provider
 
   const [user, setUser] = useState('Victor')
 
-  const [styleButton, setStyleButton] = useState('style-button')
-
   const [activeSignupPage, setActiveSignupPage] = useState(false)
 
   const [activeMainScreenPage, setActiveMainScreenPage] = useState(false)
 
-  const [digitInput, setDigitInput] = useState(false)
+  const [activeMainScreenModalEdit, setActiveMainScreenModalEdit] = useState(false)
 
-  const [digitTextarea, setDigitTextarea] = useState(false)
+  const [digitInputSignup, setDigitInputSignup] = useState(false)
+
+  const [digitInputMainScreen, setDigitInputMainScreen] = useState(false)
+
+  const [digitInputMainScreenModalEdit, setDigitInputMainScreenModalEdit] = useState(false)
+
+  const [digitTextareaMainScreen, setDigitTextareaMainScreen] = useState(false)
+
+  const [digitTextareaMainScreenModalEdit, setDigitTextareaMainScreenModalEdit] = useState(false)
 
   const [inputMainScreenPageValue, setInputMainScreenPageValue] = useState('')
 
@@ -24,9 +30,11 @@ export default function DataProvider({ children }) { // Provider
   const [userContent, setUserContent] = useState([])
 
   const [postApi, setPostApi] = useState(false)
+  
+  const [captureUserCard, setCaptureUserCard] = useState('')
 
   useEffect(() => {
-    // function that use GET method
+    // Function that uses GET method to request users in the API
     async function fetchData() {
       try {
         const res = await fetch("http://localhost:3001/codeLeapNetwork")
@@ -54,22 +62,30 @@ export default function DataProvider({ children }) { // Provider
   const value = {
     user,
     setUser,
-    styleButton,
-    setStyleButton,
     activeSignupPage,
     setActiveSignupPage,
     activeMainScreenPage,
     setActiveMainScreenPage,
-    digitInput, 
-    setDigitInput,
-    digitTextarea,
-    setDigitTextarea,
+    activeMainScreenModalEdit, 
+    setActiveMainScreenModalEdit,
+    digitInputSignup, 
+    setDigitInputSignup,
+    digitInputMainScreen,
+    setDigitInputMainScreen,
+    digitInputMainScreenModalEdit, 
+    setDigitInputMainScreenModalEdit,
+    digitTextareaMainScreen,
+    setDigitTextareaMainScreen,
+    digitTextareaMainScreenModalEdit, 
+    setDigitTextareaMainScreenModalEdit,
     inputMainScreenPageValue,
     setInputMainScreenPageValue,
     textareaMainScreenPageValue,
     setTextareaMainScreenPageValue,
     userContent,
-    setPostApi
+    setPostApi,
+    captureUserCard, 
+    setCaptureUserCard,
 
   }
 
