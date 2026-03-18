@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 48px;
   position: absolute;
   background: var(--first-color);
   width: 50%;
@@ -36,15 +36,6 @@
   margin: 0;
 }
 
-.formModal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  gap: 16px;
-  width: 100%;
-}
-
 .buttons {
   display: flex;
   justify-content: end;
@@ -53,7 +44,7 @@
   width: 100%;
 }
 
-.specificStyleModalEditCancelButton {
+.specificStyleModalDeleteCancelButton {
   font-size: 1rem;
   color: var(--sixth-color);
   background-color: var(--first-color);
@@ -61,19 +52,20 @@
   padding: 8px 24px;
   width: 120px;
   border: 0;
-  border: 1px solid var(--sixth-color);
+  border: 1px solid var(--ninth-color);
   border-radius: 8px;
   cursor: pointer;
 }
 
-.specificStyleModalEditSaveButton {
+.specificStyleModalDeleteButton {
   font-size: 1rem;
   color: var(--first-color);
-  background-color: var(--seventh-color);
+  background-color: var(--eighth-color);
   font-weight: bold;
-  width: 120px;
   padding: 8px 24px;
-  border: 1px solid var(--seventh-color);
+  width: 120px;
+  border: 0;
+  border: 1px solid var(--eighth-color);
   border-radius: 8px;
   cursor: pointer;
 }

@@ -2,19 +2,24 @@ import style from './style.css';
 import InputDefault from '../InputDefault';
 import LabelDefault from '../LabelDefault';
 import ButtonDefault from '../ButtonDefault';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataContext';
 
 function Signup() {
 
-  const { digitInputSignup } = useContext(DataContext) 
+  const { activeSignupPage, user, setUser } = useContext(DataContext)
+
+  useEffect(() => {
+    setUser('')
+
+  }, [])
 
   // function that open the Main Screen Page 
   function openMainScreenPage() {
     let able;
     
-    if (digitInputSignup === true) {
+    if ((activeSignupPage === true) && (user !== '')) {
       able = '/MainScreenPage'
       
     }
@@ -31,10 +36,11 @@ function Signup() {
         <div className='signup-div-label-input'>
           <LabelDefault forLabel='signup' nameLabel='Please enter your username'/>
           <InputDefault 
-            placeholder='Victor Cardoso'
             id='signup'
             name='signup'
-            type='text'  
+            placeholder='Victor Cardoso'
+            type='text'
+            valueInput={user}
           />
 
         </div>
@@ -45,7 +51,7 @@ function Signup() {
               id='signupButton'
               type='button' 
               nameButton='ENTER'
-              specificStyleButton='specificStyleButton'
+              specificStyleButton='specificStyleSignupButton'
             />
 
           </Link>

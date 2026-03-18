@@ -27,12 +27,6 @@
       "title": "Home",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vel nibh fermentum faucibus. Integer posuere, nisl at convallis luctus, erat lectus feugiat orci, vitae facilisis nisi sapien at justo.\n\nCurabitur eget massa sit amet turpis gravida volutpat. Donec vel dui ut erat facilisis ultrices. Nulla facilisi. Praesent at lectus id magna consequat tempor nec at turpis.",
       "date": 1773581341002
-    },
-    {
-      "title": "aee",
-      "content": "aee",
-      "date": 1773717053755,
-      "id": "ee7a"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

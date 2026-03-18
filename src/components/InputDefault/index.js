@@ -4,8 +4,8 @@ import { DataContext } from '../DataContext';
 
 function InputDefault({ placeholder, id, nameInput, type, valueInput, required, setNewTitle }) {
 
-  const { setUser, activeSignupPage, activeMainScreenPage, activeMainScreenModalEdit, setDigitInputSignup, 
-    setDigitInputMainScreen, setDigitInputMainScreenModalEdit, setInputMainScreenPageValue } = useContext(DataContext)
+  const { activeSignupPage, activeMainScreenPage, activeMainScreenModalEdit, setUser,  
+    setInputMainScreenPageValue } = useContext(DataContext)
   
   // function that verify the input value
   function onChangeName(e) {
@@ -14,29 +14,24 @@ function InputDefault({ placeholder, id, nameInput, type, valueInput, required, 
 
     if ((activeSignupPage === true) && (value !== '')) {
       setUser(value)
-      signupButton.classList.add('newSpecificStyleButton')
-      signupButton.classList.remove('specificStyleButton')
-      setDigitInputSignup(true)
+      signupButton.classList.add('newSpecificStyleSignupButton')
+      signupButton.classList.remove('specificStyleSignupButton')
 
     } else if ((activeSignupPage === true) && (value === '')) {
-      signupButton.classList.add('specificStyleButton')
-      signupButton.classList.remove('newSpecificStyleButton')
-      setDigitInputSignup(false)
+      setUser(value)
+      signupButton.classList.add('specificStyleSignupButton')
+      signupButton.classList.remove('newSpecificStyleSignupButton')
 
     } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (value !== '')) {
-      setDigitInputMainScreen(true)
       setInputMainScreenPageValue(value)
 
     } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (value === '')) {
-      setDigitInputMainScreen(false)
       setInputMainScreenPageValue(value)
 
     } else if ((activeMainScreenModalEdit === true) && (value !== '')) {
-      setDigitInputMainScreenModalEdit(true)
       setNewTitle(value)
     
     } else if ((activeMainScreenModalEdit === true) && (value === '')) {
-      setDigitInputMainScreenModalEdit(false)
       setNewTitle(value)
     
     } else {

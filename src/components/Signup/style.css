@@ -42,7 +42,7 @@
   width: 100%;
 }
 
-.specificStyleButton {
+.specificStyleSignupButton {
   font-size: 1rem;
   color: var(--first-color);
   background-color: var(--third-color);
@@ -54,7 +54,7 @@
   cursor: pointer;
 }
 
-.newSpecificStyleButton {
+.newSpecificStyleSignupButton {
   font-size: 1rem;
   color: var(--first-color);
   background-color: var(--fifth-color);

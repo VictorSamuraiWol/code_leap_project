@@ -4,52 +4,45 @@ import LabelDefault from '../LabelDefault';
 import TextareaDefault from '../TextareaDefault';
 import ButtonDefault from '../ButtonDefault';
 import Cards from '../Cards';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../DataContext';
 
 function Main() {
   
-  const { user, digitInputMainScreen, setDigitInputMainScreen, digitTextareaMainScreen, setDigitTextareaMainScreen, 
-    inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, 
-    setPostApi, activeMainScreenPage, activeMainScreenModalEdit, digitInputMainScreenModalEdit, digitTextareaMainScreenModalEdit } = useContext(DataContext)
+  const { user, inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, 
+    setPostApi, activeMainScreenPage, activeMainScreenModalEdit } = useContext(DataContext)
+
+  useEffect(() => {
+    setInputMainScreenPageValue('')
+    setTextareaMainScreenPageValue('')
+
+  }, [])
 
   useEffect(() => {
     // function that check the input and textarea values 
     function digitInputTextArea() {
-      const mainScreenButton = document.querySelector('#mainScreenButton')
-      const modalEditSaveButton = document.querySelector('#modalEditSaveButton')
-
-      if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (digitInputMainScreen === true) && (digitTextareaMainScreen === true)) {
-        mainScreenButton?.classList.add('newSpecificStyleButton')
-        mainScreenButton?.classList.remove('specificStyleButton')
+      const mainScreenButton = document.querySelector('#mainScreenButton')      
+      
+      if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && (inputMainScreenPageValue !== '') && (textareaMainScreenPageValue !== '')) {
+        mainScreenButton?.classList.add('newSpecificStyleMainScreenButton')
+        mainScreenButton?.classList.remove('specificStyleMainScreenButton')
   
-      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && ((digitInputMainScreen === false) || (digitTextareaMainScreen === false))) {
-        mainScreenButton?.classList.add('specificStyleButton')
-        mainScreenButton?.classList.remove('newSpecificStyleButton')
+      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && ((inputMainScreenPageValue === '') || (textareaMainScreenPageValue === ''))) {
+        mainScreenButton?.classList.add('specificStyleMainScreenButton')
+        mainScreenButton?.classList.remove('newSpecificStyleMainScreenButton')
   
-      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === true) && (digitInputMainScreenModalEdit === true) && (digitTextareaMainScreenModalEdit === true)) {
-        modalEditSaveButton?.classList.add('newSpecificStyleModalEditSaveButton')
-        modalEditSaveButton?.classList.remove('specificStyleButton')
-  
-      } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === true) && ((digitInputMainScreenModalEdit === false) || (digitTextareaMainScreenModalEdit === false))) {
-        modalEditSaveButton?.classList.add('specificStyleButton')
-        modalEditSaveButton?.classList.remove('newSpecificStyleModalEditSaveButton')
-
       }
 
     }
 
     digitInputTextArea()
 
-  }, [digitInputMainScreen, digitTextareaMainScreen, activeMainScreenPage, activeMainScreenModalEdit, digitInputMainScreenModalEdit, digitTextareaMainScreenModalEdit])
+  }, [activeMainScreenPage, activeMainScreenModalEdit, inputMainScreenPageValue, textareaMainScreenPageValue])
 
   // function that clean the input and textarea fields
   function clean() {
     setInputMainScreenPageValue('')
     setTextareaMainScreenPageValue('')
-
-    setDigitInputMainScreen(false)
-    setDigitTextareaMainScreen(false)
 
   }
 
@@ -75,7 +68,6 @@ function Main() {
 
       if (response.ok) {
         console.log(data, 'Data successfully submitted!');
-        alert('Data successfully submitted!');
         setPostApi(true)
         clean()
 
@@ -103,8 +95,8 @@ function Main() {
           />
           <InputDefault
             id='title'
-            valueInput={inputMainScreenPageValue} 
             placeholder='Hello world' 
+            valueInput={inputMainScreenPageValue} 
           />
         </div>
 
@@ -114,10 +106,10 @@ function Main() {
             nameLabel='Content' 
           />
           <TextareaDefault
-            nameTextarea='content'
             id='content'
-            valueTextarea={textareaMainScreenPageValue} 
+            nameTextarea='content'
             placeholder='Content here'
+            valueTextarea={textareaMainScreenPageValue} 
             rows='6'
             cols='40'
           />

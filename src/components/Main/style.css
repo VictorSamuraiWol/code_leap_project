@@ -35,7 +35,7 @@
   width: 100%;
 }
 
-.specificStyleButton {
+.specificStyleMainScreenButton {
   font-size: 1rem;
   color: var(--first-color);
   background-color: var(--third-color);
@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 
-.newSpecificStyleButton {
+.newSpecificStyleMainScreenButton {
   font-size: 1rem;
   color: var(--first-color);
   background-color: var(--fifth-color);
@@ -55,18 +55,6 @@
   width: 120px;
   padding: 8px 24px;
   border: 1px solid var(--fifth-color);
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.newSpecificStyleModalEditSaveButton {
-  font-size: 1rem;
-  color: var(--first-color);
-  background-color: var(--seventh-color);
-  font-weight: bold;
-  width: 120px;
-  padding: 8px 24px;
-  border: 1px solid var(--seventh-color);
   border-radius: 8px;
   cursor: pointer;
 }

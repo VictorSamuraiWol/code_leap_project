@@ -5,7 +5,7 @@ export const DataContext = createContext(); // Context
 
 export default function DataProvider({ children }) { // Provider
 
-  const [user, setUser] = useState('Victor')
+  const [user, setUser] = useState('')
 
   const [activeSignupPage, setActiveSignupPage] = useState(false)
 
@@ -13,15 +13,7 @@ export default function DataProvider({ children }) { // Provider
 
   const [activeMainScreenModalEdit, setActiveMainScreenModalEdit] = useState(false)
 
-  const [digitInputSignup, setDigitInputSignup] = useState(false)
-
-  const [digitInputMainScreen, setDigitInputMainScreen] = useState(false)
-
-  const [digitInputMainScreenModalEdit, setDigitInputMainScreenModalEdit] = useState(false)
-
-  const [digitTextareaMainScreen, setDigitTextareaMainScreen] = useState(false)
-
-  const [digitTextareaMainScreenModalEdit, setDigitTextareaMainScreenModalEdit] = useState(false)
+  const [activeMainScreenModalDelete, setActiveMainScreenModalDelete] = useState(false)
 
   const [inputMainScreenPageValue, setInputMainScreenPageValue] = useState('')
 
@@ -30,6 +22,8 @@ export default function DataProvider({ children }) { // Provider
   const [userContent, setUserContent] = useState([])
 
   const [postApi, setPostApi] = useState(false)
+
+  const [deleteApi, setDeleteApi] = useState(false)
   
   const [captureUserCard, setCaptureUserCard] = useState('')
 
@@ -57,7 +51,7 @@ export default function DataProvider({ children }) { // Provider
     
     fetchData()
 
-  }, [postApi])
+  }, [postApi, deleteApi])
       
   const value = {
     user,
@@ -68,22 +62,15 @@ export default function DataProvider({ children }) { // Provider
     setActiveMainScreenPage,
     activeMainScreenModalEdit, 
     setActiveMainScreenModalEdit,
-    digitInputSignup, 
-    setDigitInputSignup,
-    digitInputMainScreen,
-    setDigitInputMainScreen,
-    digitInputMainScreenModalEdit, 
-    setDigitInputMainScreenModalEdit,
-    digitTextareaMainScreen,
-    setDigitTextareaMainScreen,
-    digitTextareaMainScreenModalEdit, 
-    setDigitTextareaMainScreenModalEdit,
+    activeMainScreenModalDelete, 
+    setActiveMainScreenModalDelete,
     inputMainScreenPageValue,
     setInputMainScreenPageValue,
     textareaMainScreenPageValue,
     setTextareaMainScreenPageValue,
     userContent,
     setPostApi,
+    setDeleteApi,
     captureUserCard, 
     setCaptureUserCard,
 

@@ -4,27 +4,22 @@ import { useContext } from 'react';
 
 function TextareaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, cols, required, setNewContent }) {
 
-  const { activeMainScreenPage, activeMainScreenModalEdit, setDigitTextareaMainScreen, setDigitTextareaMainScreenModalEdit, 
-    setTextareaMainScreenPageValue } = useContext(DataContext)
+  const { activeMainScreenPage, activeMainScreenModalEdit, setTextareaMainScreenPageValue } = useContext(DataContext)
 
   // function that verify the textarea value
   function onChangeName(e) {
     let value = e.target.value
 
     if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && e.target.value !== '') {
-      setDigitTextareaMainScreen(true)
       setTextareaMainScreenPageValue(value)
 
     } else if ((activeMainScreenPage === true) && (activeMainScreenModalEdit === false) && e.target.value === '') {
-      setDigitTextareaMainScreen(false)
       setTextareaMainScreenPageValue(value)
 
     } else if ((activeMainScreenModalEdit === true) && (value !== '')) {
-      setDigitTextareaMainScreenModalEdit(true)
       setNewContent(value)
     
     } else if ((activeMainScreenModalEdit === true) && (value === '')) {
-      setDigitTextareaMainScreenModalEdit(false)
       setNewContent(value)
   
     } else {

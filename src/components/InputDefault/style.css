@@ -1,7 +1,7 @@
 input {
   color: var(--third-color);
   height: 25px;
-  width: auto;
+  width: 97.6%;
   padding: 8px;
   border: 1px solid var(--fourth-color);
   border-radius: 8px;

@@ -11,31 +11,29 @@ Modal.setAppElement('#root')
 
 function ModalEditMenuTools({ menutoolsIcons }) {
 
-  const { setActiveMainScreenModalEdit, setDigitInputMainScreenModalEdit, 
-    setDigitTextareaMainScreenModalEdit, captureUserCard } = useContext(DataContext)
+  const { setActiveMainScreenModalEdit, captureUserCard } = useContext(DataContext)
 
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [newTitle, setNewTitle] = useState(captureUserCard?.title)
   const [newContent, setNewContent] = useState(captureUserCard?.content)
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-
+    
   useEffect(() => {
     setNewTitle(captureUserCard.title)
     setNewContent(captureUserCard.content)
 
   },[captureUserCard])
 
-  function openModal(e) {
+  function openModal() {
     setModalIsOpen(true)
     setActiveMainScreenModalEdit(true)
+    setNewTitle(captureUserCard.title)
+    setNewContent(captureUserCard.content)
 
   }
 
   function closeModal() {
     setModalIsOpen(false)
     setActiveMainScreenModalEdit(false)
-
-    setDigitInputMainScreenModalEdit(false)
-    setDigitTextareaMainScreenModalEdit(false)
 
   }
 
@@ -58,8 +56,7 @@ function ModalEditMenuTools({ menutoolsIcons }) {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log('Saved!', data)
-      alert('Saved successfully!')
+      console.log('Updated!', data)
 
     }) 
     .catch((error) => {
@@ -85,7 +82,6 @@ function ModalEditMenuTools({ menutoolsIcons }) {
       >
         <div className='modalContent-title'>
           <h1>Edit item</h1>
-
         </div>
 
         <form
@@ -94,21 +90,21 @@ function ModalEditMenuTools({ menutoolsIcons }) {
         > 
           <FieldLabelInputModalEdit
             valueInput={newTitle}
-            required={true}
             setNewTitle={setNewTitle}
+            required={true}
           />
 
           <FieldLabelTextareaModalEdit
             valueTextarea={newContent}
-            required={true}
             setNewContent={setNewContent}
+            required={true}
           />
 
           <div className='buttons'>
             <ButtonDefault 
               // onClick={audioClick.play()}
               onClick={closeModal}
-              specificStyleButton='specificStyleButtonCancel'
+              specificStyleButton='specificStyleModalEditCancelButton'
               nameButton='Cancel' 
               type='button'              
             />
@@ -116,7 +112,7 @@ function ModalEditMenuTools({ menutoolsIcons }) {
             <ButtonDefault
               // onClick={audioClick.play()}
               id='modalEditSaveButton'
-              specificStyleButton='specificStyleButton'
+              specificStyleButton='specificStyleModalEditSaveButton'
               nameButton='Save' 
               type='submit'
             />
