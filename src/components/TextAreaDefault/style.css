@@ -1,15 +1,38 @@
 textarea {
-  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
   color: var(--third-color);
+  text-align: justify;
   line-height: 1.5;
-  width: 97.6%;
-  padding: 8px;
+  width: 100%;
+  padding: 10px 7px;
   border: 1px solid var(--fourth-color);
   border-radius: 8px;
+  box-sizing: border-box;
+  resize: none;
   outline: none;
 }
 
 textarea::placeholder {
-  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: var(--third-color);
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: var(--third-color);
+  border-radius: 8px;
+  cursor: default;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--fourth-color);
+  border-radius: 8px;
+  cursor: default;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ninth-color);
 }

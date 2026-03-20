@@ -6,7 +6,20 @@ import { DataContext } from '../../components/DataContext';
 
 function MainScreenPage() {
 
-  const { setActiveSignupPage, setActiveMainScreenPage } = useContext(DataContext)
+  const { setActiveSignupPage, setActiveMainScreenPage, user } = useContext(DataContext)
+
+  useEffect(() => {
+    // function that checks if the user is logged in
+    function userVerify() {
+      if (user === '') {
+        alert('User not found. Your experience on this page may be limited. Please return to the login page and sign in for a better experience.')
+      }
+
+    }
+
+    userVerify()
+
+  }, [])
 
   useEffect(() => {
     setActiveMainScreenPage(true)
@@ -16,8 +29,10 @@ function MainScreenPage() {
 
   return (
     <div className='main-screen-page'>
-      <Header />
-      <Main />
+      <div className='main-screen-page-header-main'>
+        <Header />
+        <Main />
+      </div>
     </div>
 
   )

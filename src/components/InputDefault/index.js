@@ -50,6 +50,7 @@ function InputDefault({ placeholder, id, nameInput, type, valueInput, required, 
       type={type}
       value={valueInput}
       required={required}
+      autoComplete='off'
     />
     
   )

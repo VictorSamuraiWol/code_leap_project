@@ -26,7 +26,9 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
   }
 
   //Function that uses DELETE method to delete users in the API
-  async function onDeleteModal() {
+  async function onDeleteModal(e) {
+    e.preventDefault()
+
     const url = `http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`
 
     const options = {
@@ -44,6 +46,7 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
         response.json()
         console.log('Deleted!')
         setDeleteApi(true)
+        closeModal()
 
       }
 
@@ -65,14 +68,14 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           contentLabel="Modal"
-          overlayClassName='modalOverlay'
-          className='modalContent'
+          overlayClassName='modalDeleteOverlay'
+          className='modalDeleteContent'
       >
-        <div className='modalContent-title'>
-          <h1>Are you sure you want to delete this item</h1>
+        <div className='modalDeleteContent-title'>
+          <h1>Are you sure you want to delete this item?</h1>
         </div>
 
-        <div className='buttons'>
+        <div className='deleteButtons'>
           <ButtonDefault 
             // onClick={audioClick.play()}
             onClick={closeModal}

@@ -39,6 +39,7 @@ function TextareaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, c
       rows={rows}
       cols={cols}
       required={required}
+      autoComplete='off'
     />
 
   )

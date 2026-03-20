@@ -1,7 +1,7 @@
 import style from './style.css';
 import MenuTools from '../../MenuTools';
 
-function Card({ title, username, date, content, onClick }) {
+function Card({ title, date, content, onClick, usernameFirstName, ableEditTool, ableDeleteTool }) {
 
   // function that calcule the time
   function getTimeAgo(timestamp) {
@@ -26,18 +26,23 @@ function Card({ title, username, date, content, onClick }) {
     >
       <div className='card-title-edit-delete'>
         <h1>{title}</h1>
-        <MenuTools />
+        <MenuTools 
+          ableEditTool={ableEditTool} 
+          ableDeleteTool={ableDeleteTool} 
+        />
 
       </div>      
 
       <div className='card-user-date-content'>
         <div className='card-user-date-content-span-span'>
-          <span className='card-user-date-content-span-span-username'>@{username}</span>
+          <span className='card-user-date-content-span-span-username'>@{usernameFirstName}</span>
           <span className='card-user-date-content-span-span-date'>{getTimeAgo(date)}</span>
 
         </div>
 
-        <div className='card-user-date-content-p'>{content}</div>
+        <div className='card-user-date-content-text'>
+          {content}
+        </div>
 
       </div>
 

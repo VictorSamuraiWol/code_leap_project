@@ -6,8 +6,8 @@
   gap: 16px;
   position: relative;
   width: auto;
-  padding: 116px 24px 24px 24px;
-  border: 2px solid var(--third-color);
+  padding: 104px 24px 24px 24px;
+  border: 1px solid var(--third-color);
   border-radius: 16px;
 }
 
@@ -16,20 +16,44 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top: -2px;
-  left: -2px;
+  top: -1px;
+  left: -1px;
   color: var(--first-color);
   background-color: var(--fifth-color);
   width: 100%;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  border: 2px solid var(--fifth-color);
+  border: 1px solid var(--fifth-color);
+
 }
 
 .card-title-edit-delete h1 {
+  font-size: 1.3rem;
   padding: 24px;
   margin: 0;
   cursor: default;
+  width: 60%;
+  overflow: auto;
+}
+
+.card-title-edit-delete h1::-webkit-scrollbar {
+  height: 6px;
+}
+
+.card-title-edit-delete h1::-webkit-scrollbar-track {
+  background-color: var(--third-color);
+  border-radius: 8px;
+  cursor: default;
+}
+
+.card-title-edit-delete h1::-webkit-scrollbar-thumb {
+  background-color: var(--fourth-color);
+  border-radius: 8px;
+  cursor: default;
+}
+
+.card-title-edit-delete h1::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ninth-color);
 }
 
 .card-user-date-content {
@@ -38,6 +62,7 @@
   align-items: start;
   flex-direction: column;
   gap: 16px;
+  font-size: 1.1rem;
   width: 100%;
 }
 
@@ -53,9 +78,35 @@
   font-weight: bold;
 }
 
-.card-user-date-content-p {
+.card-user-date-content-text {
   color: var(--sixth-color);
   text-align: justify;
   line-height: 1.5;
   white-space: pre-line;
+  box-sizing: border-box;
+  height: 246px;
+  width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow: auto;
+}
+
+.card-user-date-content-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-user-date-content-text::-webkit-scrollbar-track {
+  background-color: var(--third-color);
+  border-radius: 8px;
+  cursor: default;
+}
+
+.card-user-date-content-text::-webkit-scrollbar-thumb {
+  background-color: var(--fourth-color);
+  border-radius: 8px;
+  cursor: default;
+}
+
+.card-user-date-content-text::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ninth-color);
 }

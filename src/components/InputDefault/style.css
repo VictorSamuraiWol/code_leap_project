@@ -1,10 +1,15 @@
 input {
+  font-size: 0.8rem;
   color: var(--third-color);
-  height: 25px;
-  width: 97.6%;
-  padding: 8px;
+  width: 100%;
+  padding: 10px 8px;
   border: 1px solid var(--fourth-color);
   border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input:focus {
   outline: none;
 }
 

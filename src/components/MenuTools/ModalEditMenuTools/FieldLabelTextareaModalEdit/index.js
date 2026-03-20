@@ -12,6 +12,7 @@ function FieldLabelTextareaModalEdit({ valueTextarea, required, setNewContent })
         valueTextarea={valueTextarea}
         required={required}
         setNewContent={setNewContent} 
+        rows='4'
       />
 
     </div>

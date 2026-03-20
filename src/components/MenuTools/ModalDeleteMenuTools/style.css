@@ -1,4 +1,4 @@
-.modalOverlay {
+.modalDeleteOverlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,12 +10,12 @@
   left: 0;
 }
 
-.modalContent {
+.modalDeleteContent {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   position: absolute;
   background: var(--first-color);
   width: 50%;
@@ -24,19 +24,23 @@
   border-radius: 16px;
 }
 
-.modalContent-title {
+.modalDeleteContent:focus {
+  outline: none;
+}
+
+.modalDeleteContent-title {
   display: flex;
   justify-content: start;
   align-items: center;
   width: 100%;
 }
 
-.modalContent-title h1 {
-  font-weight: bold;
+.modalDeleteContent-title h1 {
+  font-size: 1.3rem;
   margin: 0;
 }
 
-.buttons {
+.deleteButtons {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -49,9 +53,9 @@
   color: var(--sixth-color);
   background-color: var(--first-color);
   font-weight: bold;
-  padding: 8px 24px;
+  padding: 6px 33px;
   width: 120px;
-  border: 0;
+  border: none;
   border: 1px solid var(--ninth-color);
   border-radius: 8px;
   cursor: pointer;
@@ -62,7 +66,7 @@
   color: var(--first-color);
   background-color: var(--eighth-color);
   font-weight: bold;
-  padding: 8px 24px;
+  padding: 6px 21px;
   width: 120px;
   border: 0;
   border: 1px solid var(--eighth-color);

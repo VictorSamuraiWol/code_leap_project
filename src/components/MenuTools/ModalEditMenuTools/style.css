@@ -1,4 +1,4 @@
-.modalOverlay {
+.modalEditOverlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,12 +10,12 @@
   left: 0;
 }
 
-.modalContent {
+.modalEditContent {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   position: absolute;
   background: var(--first-color);
   width: 50%;
@@ -24,28 +24,32 @@
   border-radius: 16px;
 }
 
-.modalContent-title {
+.modalEditContent:focus {
+  outline: none;
+}
+
+.modalEditContent-title {
   display: flex;
   justify-content: start;
   align-items: center;
   width: 100%;
 }
 
-.modalContent-title h1 {
-  font-weight: bold;
+.modalEditContent-title h1 {
+  font-size: 1.3rem;
   margin: 0;
 }
 
-.formModal {
+.formEditModal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
 }
 
-.buttons {
+.editButtons {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -58,9 +62,9 @@
   color: var(--sixth-color);
   background-color: var(--first-color);
   font-weight: bold;
-  padding: 8px 24px;
+  padding: 6px 33px;
   width: 120px;
-  border: 0;
+  border: none;
   border: 1px solid var(--sixth-color);
   border-radius: 8px;
   cursor: pointer;
@@ -72,7 +76,7 @@
   background-color: var(--seventh-color);
   font-weight: bold;
   width: 120px;
-  padding: 8px 24px;
+  padding: 6px 28px;
   border: 1px solid var(--seventh-color);
   border-radius: 8px;
   cursor: pointer;

@@ -1,9 +1,8 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
   background-color: var(--first-color);
-  width: 50%;
   padding: 24px;
 }
 
@@ -12,20 +11,22 @@
   justify-content: center;
   align-items: start;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   padding: 24px;
   border: 1px solid var(--third-color);
   border-radius: 16px;
 }
 
 .main-content-card-create h1 {
+  font-size: 1.3rem;
+  margin: 0;
   cursor: default;
 }
 
 .main-content-card-create-label-input-textarea {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
 }
 
@@ -41,7 +42,7 @@
   background-color: var(--third-color);
   font-weight: bold;
   width: 120px;
-  padding: 8px 24px;
+  padding: 6px 29px;
   border: 1px solid var(--third-color);
   border-radius: 8px;
   cursor: pointer;
@@ -53,7 +54,7 @@
   background-color: var(--fifth-color);
   font-weight: bold;
   width: 120px;
-  padding: 8px 24px;
+  padding: 6px 29px;
   border: 1px solid var(--fifth-color);
   border-radius: 8px;
   cursor: pointer;

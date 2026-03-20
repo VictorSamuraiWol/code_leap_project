@@ -4,7 +4,7 @@ import LabelDefault from '../LabelDefault';
 import TextareaDefault from '../TextareaDefault';
 import ButtonDefault from '../ButtonDefault';
 import Cards from '../Cards';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { DataContext } from '../DataContext';
 
 function Main() {
@@ -52,31 +52,38 @@ function Main() {
     let data = '';
     setPostApi(false)
 
-    data = {
-      username: user,
-      title: inputMainScreenPageValue,
-      content: textareaMainScreenPageValue,
-      date: Date.now()
-    }
-
-    try {
-      const response = await fetch('http://localhost:3001/codeLeapNetwork', {
-        method: 'POST',
-        headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(data)                
-      })
-
-      if (response.ok) {
-        console.log(data, 'Data successfully submitted!');
-        setPostApi(true)
-        clean()
-
+    if (user !== '') {
+      data = {
+        username: user,
+        title: inputMainScreenPageValue,
+        content: textareaMainScreenPageValue,
+        date: Date.now()
+        
       }
 
-    } catch(error) {
-      console.error('Error while submitting data', error)
+      try {
+        const response = await fetch('http://localhost:3001/codeLeapNetwork', {
+          method: 'POST',
+          headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)                
+        })
 
-    } 
+        if (response.ok) {
+          console.log(data, 'Data successfully submitted!');
+          setPostApi(true)
+          clean()
+
+        }
+
+      } catch(error) {
+        console.error('Error while submitting data', error)
+
+      } 
+
+    } else {
+      alert('User not found. Please return to the login page and sign in before creating your post.')
+    
+    }
 
   }
 

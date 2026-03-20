@@ -31,17 +31,20 @@ function Signup() {
   return (
     <div className='signup'>
       <div className='signup-div'>
-        <h1>Welcome to CodeLeap Network!</h1>
+        <div className='signup-div-h1-label-input'>
+          <h1>Welcome to CodeLeap Network!</h1>
 
-        <div className='signup-div-label-input'>
-          <LabelDefault forLabel='signup' nameLabel='Please enter your username'/>
-          <InputDefault 
-            id='signup'
-            name='signup'
-            placeholder='Victor Cardoso'
-            type='text'
-            valueInput={user}
-          />
+          <div className='signup-div-label-input'>
+            <LabelDefault forLabel='signup' nameLabel='Please enter your username'/>
+            <InputDefault 
+              id='signup'
+              name='signup'
+              placeholder='Victor Cardoso'
+              type='text'
+              valueInput={user}
+            />
+            
+          </div>
 
         </div>
 
@@ -59,6 +62,7 @@ function Signup() {
         </div>
 
       </div>
+
 
     </div>
   )

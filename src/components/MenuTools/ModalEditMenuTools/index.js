@@ -11,12 +11,12 @@ Modal.setAppElement('#root')
 
 function ModalEditMenuTools({ menutoolsIcons }) {
 
-  const { setActiveMainScreenModalEdit, captureUserCard } = useContext(DataContext)
+  const { setActiveMainScreenModalEdit, captureUserCard, user, setPostApi } = useContext(DataContext)
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [newTitle, setNewTitle] = useState(captureUserCard?.title)
   const [newContent, setNewContent] = useState(captureUserCard?.content)
-    
+   
   useEffect(() => {
     setNewTitle(captureUserCard.title)
     setNewContent(captureUserCard.content)
@@ -38,14 +38,19 @@ function ModalEditMenuTools({ menutoolsIcons }) {
   }
 
   //Function that uses PUT method to update users in the API
-  async function onSaveModal() {
+  async function onSaveModal(e) {
+    e.preventDefault()
 
     const jsonBody = JSON.stringify({
+      username: user,
       title: newTitle,
       content: newContent,
       date: Date.now()
 
     })
+
+    setPostApi(false)
+
     await fetch(`http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`, {
       method: 'PUT',
       headers: {
@@ -57,6 +62,8 @@ function ModalEditMenuTools({ menutoolsIcons }) {
     .then((res) => res.json())
     .then((data) => {
       console.log('Updated!', data)
+      setPostApi(true)
+      closeModal()
 
     }) 
     .catch((error) => {
@@ -77,16 +84,16 @@ function ModalEditMenuTools({ menutoolsIcons }) {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           contentLabel="Modal"
-          overlayClassName='modalOverlay'
-          className='modalContent'
+          overlayClassName='modalEditOverlay'
+          className='modalEditContent'
       >
-        <div className='modalContent-title'>
+        <div className='modalEditContent-title'>
           <h1>Edit item</h1>
         </div>
 
         <form
           onSubmit={onSaveModal}
-          className='formModal'
+          className='formEditModal'
         > 
           <FieldLabelInputModalEdit
             valueInput={newTitle}
@@ -100,7 +107,7 @@ function ModalEditMenuTools({ menutoolsIcons }) {
             required={true}
           />
 
-          <div className='buttons'>
+          <div className='editButtons'>
             <ButtonDefault 
               // onClick={audioClick.play()}
               onClick={closeModal}

@@ -3,6 +3,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   background-color: var(--second-color);
+}
+
+.main-screen-page-header-main {
+  width: 50%;
 }

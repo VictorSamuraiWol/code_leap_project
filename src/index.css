@@ -1,16 +1,16 @@
 :root {
-  --first-color: white;
-  --second-color: rgb(221, 221, 221);
-  --third-color: rgb(204, 204, 204);
-  --fourth-color: rgb(119, 119, 119);
-  --fifth-color: rgb(118, 149, 236);
-  --sixth-color: black;
-  --seventh-color: rgb(71, 185, 96);
-  --eighth-color: rgb(255, 81, 81);
-  --ninth-color: rgb(153, 153, 153)
+  --first-color: #ffffff;  
+  --second-color: #f5f5f5;
+  --third-color: #cccccc;
+  --fourth-color: #777777;
+  --fifth-color: #7695EC;
+  --sixth-color: #000000;
+  --seventh-color: #47B960;
+  --eighth-color: #FF5151;  
+  --ninth-color: #999999;  
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
