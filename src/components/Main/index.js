@@ -107,7 +107,7 @@ function Main() {
             id='title'
             placeholder='Hello world' 
             valueInput={inputMainScreenPageValue}
-            required='true'
+            required={true}
           />
         </div>
 
@@ -123,7 +123,7 @@ function Main() {
             valueTextarea={textareaMainScreenPageValue} 
             rows='6'
             cols='40'
-            required='true'
+            required={true}
           />
         </div>
 
