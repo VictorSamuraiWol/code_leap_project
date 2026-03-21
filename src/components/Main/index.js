@@ -4,13 +4,16 @@ import LabelDefault from '../LabelDefault';
 import TextareaDefault from '../TextareaDefault';
 import ButtonDefault from '../ButtonDefault';
 import Cards from '../Cards';
-import { useContext, useEffect } from 'react';
+import PopupUserNotFound from '../Popups/PopupUserNotFound';
+import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../DataContext';
 
 function Main() {
   
   const { user, inputMainScreenPageValue, setInputMainScreenPageValue, textareaMainScreenPageValue, setTextareaMainScreenPageValue, 
     setPostApi, activeMainScreenPage, activeMainScreenModalEdit } = useContext(DataContext)
+
+  const [popupUserNotFoundTwo, setPopupUserNotFoundTwo] = useState(false)
 
   useEffect(() => {
     setInputMainScreenPageValue('')
@@ -81,7 +84,7 @@ function Main() {
       } 
 
     } else {
-      alert('User not found. Please return to the login page and sign in before creating your post.')
+      setPopupUserNotFoundTwo(true)
     
     }
 
@@ -103,7 +106,8 @@ function Main() {
           <InputDefault
             id='title'
             placeholder='Hello world' 
-            valueInput={inputMainScreenPageValue} 
+            valueInput={inputMainScreenPageValue}
+            required='true'
           />
         </div>
 
@@ -119,6 +123,7 @@ function Main() {
             valueTextarea={textareaMainScreenPageValue} 
             rows='6'
             cols='40'
+            required='true'
           />
         </div>
 
@@ -134,6 +139,12 @@ function Main() {
       </form>
 
       <Cards />
+      
+      {/* PopupUserNotFound */}
+      {popupUserNotFoundTwo && <PopupUserNotFound
+        close={setPopupUserNotFoundTwo}
+        text='"User not found. Please return to the login page and sign in before creating your post."' 
+      />}
 
     </div>
   )

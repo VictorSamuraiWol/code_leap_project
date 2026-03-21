@@ -64,7 +64,6 @@
   font-weight: bold;
   padding: 6px 33px;
   width: 120px;
-  border: none;
   border: 1px solid var(--sixth-color);
   border-radius: 8px;
   cursor: pointer;

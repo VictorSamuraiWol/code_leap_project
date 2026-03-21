@@ -55,7 +55,6 @@
   font-weight: bold;
   padding: 6px 33px;
   width: 120px;
-  border: none;
   border: 1px solid var(--ninth-color);
   border-radius: 8px;
   cursor: pointer;
@@ -68,7 +67,6 @@
   font-weight: bold;
   padding: 6px 21px;
   width: 120px;
-  border: 0;
   border: 1px solid var(--eighth-color);
   border-radius: 8px;
   cursor: pointer;
