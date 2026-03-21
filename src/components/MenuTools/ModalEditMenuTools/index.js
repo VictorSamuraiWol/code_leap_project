@@ -11,7 +11,7 @@ Modal.setAppElement('#root')
 
 function ModalEditMenuTools({ menutoolsIcons }) {
 
-  const { setActiveMainScreenModalEdit, captureUserCard, user, setPostApi } = useContext(DataContext)
+  const { setActiveMainScreenModalEdit, captureUserCard, user, setPutApi } = useContext(DataContext)
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [newTitle, setNewTitle] = useState(captureUserCard?.title)
@@ -40,6 +40,7 @@ function ModalEditMenuTools({ menutoolsIcons }) {
   //Function that uses PUT method to update users in the API
   async function onSaveModal(e) {
     e.preventDefault()
+    setPutApi(false)
 
     const jsonBody = JSON.stringify({
       username: user,
@@ -48,8 +49,6 @@ function ModalEditMenuTools({ menutoolsIcons }) {
       date: Date.now()
 
     })
-
-    setPostApi(false)
 
     await fetch(`http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`, {
       method: 'PUT',
@@ -62,7 +61,7 @@ function ModalEditMenuTools({ menutoolsIcons }) {
     .then((res) => res.json())
     .then((data) => {
       console.log('Updated!', data)
-      setPostApi(true)
+      setPutApi(true)
       closeModal()
 
     }) 

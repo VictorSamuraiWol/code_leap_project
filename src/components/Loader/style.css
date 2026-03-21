@@ -1,0 +1,32 @@
+.loader-span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+}
+
+.loader-span-animation {
+  width: 20px;
+  height: 20px;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-top: 5px solid var(--fourth-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+}
+
+.loader-span-text {
+  color: var(--fourth-color);
+}
+  
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+  

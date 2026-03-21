@@ -53,7 +53,7 @@ function Main() {
   async function onSave(e) {
     e.preventDefault();
     let data = '';
-    setPostApi(false)
+    setPostApi(false);
 
     if (user !== '') {
       data = {

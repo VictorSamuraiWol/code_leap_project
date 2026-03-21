@@ -23,14 +23,19 @@ export default function DataProvider({ children }) { // Provider
 
   const [postApi, setPostApi] = useState(false)
 
+  const [putApi, setPutApi] = useState(false)
+
   const [deleteApi, setDeleteApi] = useState(false)
   
   const [captureUserCard, setCaptureUserCard] = useState('')
+
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     // Function that uses GET method to request users in the API
     async function fetchData() {
       try {
+        setLoading(true)
         const res = await fetch("http://localhost:3001/codeLeapNetwork")
         const data = await res.json() 
   
@@ -39,6 +44,7 @@ export default function DataProvider({ children }) { // Provider
   
         } else {
           setUserContent(data)
+          setLoading(false)
   
         }
               
@@ -51,7 +57,7 @@ export default function DataProvider({ children }) { // Provider
     
     fetchData()
 
-  }, [postApi, deleteApi])
+  }, [postApi, putApi, deleteApi])
       
   const value = {
     user,
@@ -70,9 +76,12 @@ export default function DataProvider({ children }) { // Provider
     setTextareaMainScreenPageValue,
     userContent,
     setPostApi,
+    setPutApi,
     setDeleteApi,
     captureUserCard, 
     setCaptureUserCard,
+    loading,
+    setLoading
 
   }
 

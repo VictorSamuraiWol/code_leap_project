@@ -4,10 +4,11 @@ import Main from '../../components/Main';
 import PopupUserNotFound from '../../components/Popups/PopupUserNotFound';
 import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../components/DataContext';
+import Loader from '../../components/Loader';
 
 function MainScreenPage() {
 
-  const { setActiveSignupPage, setActiveMainScreenPage, user } = useContext(DataContext)
+  const { setActiveSignupPage, setActiveMainScreenPage, user, loading } = useContext(DataContext)
 
   const [popupUserNotFoundOne, setPopupUserNotFoundOne] = useState(false)
 
@@ -45,6 +46,8 @@ function MainScreenPage() {
         />}
 
       </div>
+
+      {loading && <Loader />}            
 
     </div>
 

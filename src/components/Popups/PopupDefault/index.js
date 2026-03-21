@@ -17,7 +17,7 @@ function PopupDefault({ close, text }) {
         <ButtonDefault 
           onClick={closePopup}
           nameButton='OK' 
-          specificStyleButton='specificStyleButton' 
+          specificStyleButton='specificStyleButtonPopup' 
           type='button' 
         />
 

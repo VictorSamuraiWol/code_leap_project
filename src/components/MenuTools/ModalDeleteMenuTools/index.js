@@ -27,7 +27,7 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
 
   //Function that uses DELETE method to delete users in the API
   async function onDeleteModal(e) {
-    e.preventDefault()
+    e?.preventDefault()
 
     const url = `http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`
 
