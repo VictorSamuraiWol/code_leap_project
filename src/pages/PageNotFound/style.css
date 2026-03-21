@@ -1,0 +1,35 @@
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 104px;
+  background-color: var(--first-color);
+  height: 100vh;
+}
+
+.text404 {
+  display: block;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--fourth-color);
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--fourth-color);
+}
+
+.paragrafh {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: var(--fourth-color);
+}
+
+.back-page {
+  font-size: 3rem;
+}
