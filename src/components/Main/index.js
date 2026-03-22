@@ -60,19 +60,20 @@ function Main() {
         username: user,
         title: inputMainScreenPageValue,
         content: textareaMainScreenPageValue,
-        date: Date.now()
-        
+        created_datetime: Date.now(),
+        author_ip: "ip"
       }
 
       try {
-        const response = await fetch('http://localhost:3001/codeLeapNetwork', {
+        const response = await fetch('http://localhost:3001/codeLeapNetwork', { // json server
+        // const response = await fetch('https://dev.codeleap.co.uk/careers/', { // codeleap server
           method: 'POST',
           headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data)                
         })
 
         if (response.ok) {
-          console.log(data, 'Data successfully submitted!');
+          console.log('Created!', data);
           setPostApi(true)
           clean()
 

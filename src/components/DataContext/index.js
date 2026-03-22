@@ -36,7 +36,8 @@ export default function DataProvider({ children }) { // Provider
     async function fetchData() {
       try {
         setLoading(true)
-        const res = await fetch("http://localhost:3001/codeLeapNetwork")
+        const res = await fetch("http://localhost:3001/codeLeapNetwork") // json server
+        // const res = await fetch("https://dev.codeleap.co.uk/careers/") // codeleap server
         const data = await res.json() 
   
         if (!data) {

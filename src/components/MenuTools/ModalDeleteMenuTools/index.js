@@ -29,7 +29,8 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
   async function onDeleteModal(e) {
     e?.preventDefault()
 
-    const url = `http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`
+    const url = `http://localhost:3001/codeLeapNetwork/${captureUserCard.id}` // json server
+    // const url = `https://dev.codeleap.co.uk/careers/${captureUserCard.id}` // codeleap server
 
     const options = {
         method: "DELETE",
@@ -76,8 +77,7 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
         </div>
 
         <div className='deleteButtons'>
-          <ButtonDefault 
-            // onClick={audioClick.play()}
+          <ButtonDefault
             onClick={closeModal}
             specificStyleButton='specificStyleModalDeleteCancelButton'
             nameButton='Cancel' 
@@ -85,7 +85,6 @@ function ModalDeleteMenuTools({ menutoolsIcons }) {
           />
 
           <ButtonDefault
-            // onClick={audioClick.play()}
             onClick={onDeleteModal}
             id='modalDeleteButton'
             specificStyleButton='specificStyleModalDeleteButton'

@@ -15,7 +15,7 @@ function Cards() {
 
   // function that returns only the edited first name
   function firstNameUserSplitSlice(nameUser) {
-    const firstName = nameUser.trim().split(/\s+/)[0]
+    const firstName = nameUser && nameUser.trim().split(/\s+/)[0]
 
     let editFirstName;
 
@@ -67,18 +67,37 @@ function Cards() {
     return able
 
   }
-
+console.log(userContent, 70)
   return (
     <div className='container'>
-      {[...userContent]
-        .sort((a, b) => b.date - a.date)
+      {/* {[...userContent]
+        .sort((a, b) => b.created_datetime - a.created_datetime)
         .map((user) => (
           <Card
             key={user.id}
             onClick={() => setCaptureIdUserModal(user)}
             title={user.title}
             usernameFirstName={firstNameUserSplitSlice(user?.username)}
-            date={user.date}
+            date={user.created_datetime}
+            content={user.content}
+            ableEditTool={matchedUserAndContentUser(user.id)}
+            ableDeleteTool={matchedUserAndContentUser(user.id)}
+          />
+
+        ))
+
+      } */}
+
+      {userContent !== undefined && userContent.length > 0 &&
+      [...userContent]
+        .sort((a, b) => b.created_datetime - a.created_datetime)
+        .map((user) => (
+          <Card
+            key={user.id}
+            onClick={() => setCaptureIdUserModal(user)}
+            title={user.title}
+            usernameFirstName={firstNameUserSplitSlice(user?.username)}
+            date={user.created_datetime}
             content={user.content}
             ableEditTool={matchedUserAndContentUser(user.id)}
             ableDeleteTool={matchedUserAndContentUser(user.id)}

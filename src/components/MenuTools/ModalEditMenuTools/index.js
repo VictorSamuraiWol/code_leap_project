@@ -46,11 +46,11 @@ function ModalEditMenuTools({ menutoolsIcons }) {
       username: user,
       title: newTitle,
       content: newContent,
-      date: Date.now()
-
+      created_datetime: Date.now()
     })
 
-    await fetch(`http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`, {
+    await fetch(`http://localhost:3001/codeLeapNetwork/${captureUserCard.id}`, { // json server
+    // await fetch(`https://dev.codeleap.co.uk/careers/${captureUserCard.id}`, { // codeleap server
       method: 'PUT',
       headers: {
           "Content-Type": "application/json"
@@ -107,8 +107,7 @@ function ModalEditMenuTools({ menutoolsIcons }) {
           />
 
           <div className='editButtons'>
-            <ButtonDefault 
-              // onClick={audioClick.play()}
+            <ButtonDefault
               onClick={closeModal}
               specificStyleButton='specificStyleModalEditCancelButton'
               nameButton='Cancel' 
@@ -116,7 +115,6 @@ function ModalEditMenuTools({ menutoolsIcons }) {
             />
 
             <ButtonDefault
-              // onClick={audioClick.play()}
               id='modalEditSaveButton'
               specificStyleButton='specificStyleModalEditSaveButton'
               nameButton='Save' 

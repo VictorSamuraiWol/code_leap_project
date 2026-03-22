@@ -1,7 +1,7 @@
 import style from './style.css';
 import MenuTools from '../../MenuTools';
 
-function Card({ title, date, content, onClick, usernameFirstName, ableEditTool, ableDeleteTool }) {
+function Card({ title, date, content, onClick, usernameFirstName, ableEditTool, ableDeleteTool}) {
 
   // function that calcule the time
   function getTimeAgo(timestamp) {
