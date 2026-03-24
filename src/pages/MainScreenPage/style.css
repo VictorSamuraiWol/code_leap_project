@@ -10,3 +10,31 @@
 .main-screen-page-header-main {
   width: 50%;
 }
+
+@media (max-width: 480px) {
+  .main-screen-page-header-main {
+    width: 70%;
+  }
+
+}
+
+@media (min-width: 481px) {
+  .main-screen-page-header-main {
+    width: 70%;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .main-screen-page-header-main {
+    width: 60%;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .main-screen-page-header-main {
+    width: 50%;
+  }
+
+}

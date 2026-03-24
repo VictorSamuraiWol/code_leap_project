@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import MenuTools from '../../MenuTools';
 
 function Card({ title, date, content, onClick, usernameFirstName, ableEditTool, ableDeleteTool}) {

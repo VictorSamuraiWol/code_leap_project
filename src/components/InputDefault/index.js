@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import { useContext } from 'react';
 import { DataContext } from '../DataContext';
 

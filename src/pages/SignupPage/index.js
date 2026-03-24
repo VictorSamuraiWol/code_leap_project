@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import Signup from '../../components/Signup';
 import { useContext, useEffect } from 'react';
 import { DataContext } from '../../components/DataContext';

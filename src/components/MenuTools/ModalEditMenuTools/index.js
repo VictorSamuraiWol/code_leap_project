@@ -1,4 +1,4 @@
-import style from './style.css'
+import './style.css'
 import Modal from 'react-modal'
 import FieldLabelInputModalEdit from './FieldLabelInputModalEdit';
 import FieldLabelTextareaModalEdit from './FieldLabelTextareaModalEdit';

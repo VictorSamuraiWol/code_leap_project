@@ -1,3 +1,31 @@
 label {
   font-size: 1rem;
 }
+
+@media (max-width: 480px) {
+  label {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media (min-width: 481px) {
+  label {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  label {
+    font-size: 0.9rem;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  label {
+    font-size: 1rem;
+  }
+  
+}

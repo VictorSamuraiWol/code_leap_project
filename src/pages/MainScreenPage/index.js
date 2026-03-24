@@ -1,10 +1,10 @@
-import style from './style.css';
+import './style.css';
 import Header from '../../components/Header';
 import Main from '../../components/Main';
 import PopupUserNotFound from '../../components/Popups/PopupUserNotFound';
+import Loader from '../../components/Loader';
 import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../components/DataContext';
-import Loader from '../../components/Loader';
 
 function MainScreenPage() {
 

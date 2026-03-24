@@ -80,3 +80,112 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .modalEditContent-title h1 {
+    font-size: 0.9rem;
+  }
+
+  .specificStyleModalEditCancelButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+  .specificStyleModalEditSaveButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+}
+
+@media (min-width: 481px) {
+  .modalEditContent-title h1 {
+    font-size: 0.9rem;
+  }
+
+  .specificStyleModalEditCancelButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+  .specificStyleModalEditSaveButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .modalEditContent-title h1 {
+    font-size: 1rem;
+  }
+
+  .specificStyleModalEditCancelButton {
+    font-size: 1rem;
+    width: 100px;
+    padding: 6px 0;
+  }
+
+  .specificStyleModalEditSaveButton {
+    font-size: 1rem;
+    width: 100px;
+    padding: 6px 0;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .modalEditContent-title h1 {
+    font-size: 1.1rem;
+  }
+
+  .specificStyleModalEditCancelButton {
+    font-size: 1.1rem;
+    width: 105px;
+  }
+
+  .specificStyleModalEditSaveButton {
+    font-size: 1.1rem;
+    width: 105px;
+  }
+
+}
+
+@media (min-width: 1280px) {
+  .modalEditContent-title h1 {
+    font-size: 1.2rem;
+  }
+
+  .specificStyleModalEditCancelButton {
+    font-size: 1.2rem;
+    width: 107px;
+  }
+
+  .specificStyleModalEditSaveButton {
+    font-size: 1.2rem;
+    width: 107px;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .modalEditContent-title h1 {
+    font-size: 1.3rem;
+  }
+
+  .specificStyleModalEditCancelButton {
+    font-size: 1.3rem;
+    width: 111px;
+  }
+
+  .specificStyleModalEditSaveButton {
+    font-size: 1.3rem;
+    width: 111px;
+  }
+
+}
+

@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import ButtonDefault from '../../ButtonDefault';
 
 function PopupDefault({ close, text }) {

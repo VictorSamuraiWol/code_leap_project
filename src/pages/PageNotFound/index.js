@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import { Link } from 'react-router-dom';
 
 function PageNotFound() {
@@ -14,7 +14,7 @@ function PageNotFound() {
             </div>
 
             <p className='paragrafh'>
-                Is this what you were looking for? Please verify the address in the adress bar or click the link below to return to the previous page.
+                "Is this what you were looking for? Please verify the address in the adress bar or click the link below to return to the previous page."
             </p>
 
             <Link to='/'>

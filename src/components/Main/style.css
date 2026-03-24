@@ -59,3 +59,111 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .main-content-card-create h1 {
+    font-size: 0.9rem;
+  }
+
+  .specificStyleMainScreenButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+  .newSpecificStyleMainScreenButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+}
+
+@media (min-width: 481px) {
+  .main-content-card-create h1 {
+    font-size: 0.9rem;
+  }
+
+  .specificStyleMainScreenButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+  .newSpecificStyleMainScreenButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .main-content-card-create h1 {
+    font-size: 1rem;
+  }
+
+  .specificStyleMainScreenButton {
+    font-size: 1rem;
+    width: 100px;
+    padding: 6px 0;
+  }
+
+  .newSpecificStyleMainScreenButton {
+    font-size: 1rem;
+    width: 100px;
+    padding: 6px 0;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .main-content-card-create h1 {
+    font-size: 1.1rem;
+  }
+
+  .specificStyleMainScreenButton {
+    font-size: 1.1rem;
+    width: 105px;
+  }
+
+  .newSpecificStyleMainScreenButton {
+    font-size: 1.1rem;
+    width: 105px;
+  }
+
+}
+
+@media (min-width: 1280px) {
+  .main-content-card-create h1 {
+    font-size: 1.2rem;
+  }
+
+  .specificStyleMainScreenButton {
+    font-size: 1.2rem;
+    width: 107px;
+  }
+
+  .newSpecificStyleMainScreenButton {
+    font-size: 1.2rem;
+    width: 107px;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .main-content-card-create h1 {
+    font-size: 1.3rem;
+  }
+
+  .specificStyleMainScreenButton {
+    font-size: 1.3rem;
+    width: 111px;
+  }
+
+  .newSpecificStyleMainScreenButton {
+    font-size: 1.3rem;
+    width: 111px;
+  }
+
+}

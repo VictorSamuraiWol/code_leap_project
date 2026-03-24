@@ -1,4 +1,4 @@
-import style from './style.css'
+import './style.css'
 import Modal from 'react-modal'
 import ButtonDefault from '../../ButtonDefault';
 import { useContext, useState } from 'react';

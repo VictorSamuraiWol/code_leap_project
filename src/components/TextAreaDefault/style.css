@@ -36,3 +36,24 @@ textarea::-webkit-scrollbar-thumb {
 textarea::-webkit-scrollbar-thumb:hover {
   background-color: var(--ninth-color);
 }
+
+@media (max-width: 480px) {
+  textarea {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media (min-width: 481px) {
+  textarea {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  textarea {
+    font-size: 0.8rem;
+  }
+  
+}

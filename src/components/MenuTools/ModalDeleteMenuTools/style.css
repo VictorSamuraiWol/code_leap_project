@@ -71,3 +71,111 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .modalDeleteContent-title h1 {
+    font-size: 0.9rem;
+  }
+
+  .specificStyleModalDeleteCancelButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+  .specificStyleModalDeleteButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+}
+
+@media (min-width: 481px) {
+  .modalDeleteContent-title h1 {
+    font-size: 0.9rem;
+  }
+
+  .specificStyleModalDeleteCancelButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+  .specificStyleModalDeleteButton {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 4px 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .modalDeleteContent-title h1 {
+    font-size: 1rem;
+  }
+
+  .specificStyleModalDeleteCancelButton {
+    font-size: 1rem;
+    width: 100px;
+    padding: 6px 0;
+  }
+
+  .specificStyleModalDeleteButton {
+    font-size: 1rem;
+    width: 100px;
+    padding: 6px 0;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .modalDeleteContent-title h1 {
+    font-size: 1.1rem;
+  }
+
+  .specificStyleModalDeleteCancelButton {
+    font-size: 1.1rem;
+    width: 105px;
+  }
+
+  .specificStyleModalDeleteButton {
+    font-size: 1.1rem;
+    width: 105px;
+  }
+
+}
+
+@media (min-width: 1280px) {
+  .modalDeleteContent-title h1 {
+    font-size: 1.2rem;
+  }
+
+  .specificStyleModalDeleteCancelButton {
+    font-size: 1.2rem;
+    width: 107px;
+  }
+
+  .specificStyleModalDeleteButton {
+    font-size: 1.2rem;
+    width: 107px;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .modalDeleteContent-title h1 {
+    font-size: 1.3rem;
+  }
+
+  .specificStyleModalDeleteCancelButton {
+    font-size: 1.3rem;
+    width: 111px;
+  }
+
+  .specificStyleModalDeleteButton {
+    font-size: 1.3rem;
+    width: 111px;
+  }
+
+}

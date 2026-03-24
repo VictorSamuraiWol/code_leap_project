@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import InputDefault from '../InputDefault';
 import LabelDefault from '../LabelDefault';
 import ButtonDefault from '../ButtonDefault';

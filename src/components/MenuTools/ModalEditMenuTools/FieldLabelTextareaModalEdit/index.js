@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import LabelDefault from '../../../LabelDefault';
 import TextareaDefault from '../../../TextareaDefault';
 

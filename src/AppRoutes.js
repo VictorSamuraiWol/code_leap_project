@@ -1,4 +1,4 @@
-import './AppRoutes.css';
+import './approutes.css';
 import SignupPage from './pages/SignupPage';
 import MainScreenPage from './pages/MainScreenPage';
 import PageNotFound from './pages/PageNotFound';

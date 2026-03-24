@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import ModalEditMenuTools from './ModalEditMenuTools';
 import ModalDeleteMenuTools from './ModalDeleteMenuTools';
 

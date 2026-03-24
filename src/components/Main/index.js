@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import InputDefault from '../InputDefault';
 import LabelDefault from '../LabelDefault';
 import TextareaDefault from '../TextareaDefault';
@@ -60,8 +60,7 @@ function Main() {
         username: user,
         title: inputMainScreenPageValue,
         content: textareaMainScreenPageValue,
-        created_datetime: Date.now(),
-        author_ip: "ip"
+        created_datetime: Date.now()
       }
 
       try {

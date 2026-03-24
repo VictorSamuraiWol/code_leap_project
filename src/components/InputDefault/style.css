@@ -16,3 +16,24 @@ input:focus {
 input::placeholder {
   color: var(--third-color);
 }
+
+@media (max-width: 480px) {
+  input {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media (min-width: 481px) {
+  input {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  input {
+    font-size: 0.8rem;
+  }
+  
+}

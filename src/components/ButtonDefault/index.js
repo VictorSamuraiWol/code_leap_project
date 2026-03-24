@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import clickSound from '../../sounds/click-sound.mp3'
 
 function ButtonDefault({ id, specificStyleButton, onClick, type, nameButton }) {

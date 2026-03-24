@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import Card from './Card';
 import { useContext } from 'react';
 import { DataContext } from '../DataContext';
@@ -67,27 +67,9 @@ function Cards() {
     return able
 
   }
-console.log(userContent, 70)
+
   return (
     <div className='container'>
-      {/* {[...userContent]
-        .sort((a, b) => b.created_datetime - a.created_datetime)
-        .map((user) => (
-          <Card
-            key={user.id}
-            onClick={() => setCaptureIdUserModal(user)}
-            title={user.title}
-            usernameFirstName={firstNameUserSplitSlice(user?.username)}
-            date={user.created_datetime}
-            content={user.content}
-            ableEditTool={matchedUserAndContentUser(user.id)}
-            ableDeleteTool={matchedUserAndContentUser(user.id)}
-          />
-
-        ))
-
-      } */}
-
       {userContent !== undefined && userContent.length > 0 &&
       [...userContent]
         .sort((a, b) => b.created_datetime - a.created_datetime)

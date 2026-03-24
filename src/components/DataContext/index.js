@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import { createContext, useEffect, useState } from 'react';
 
 export const DataContext = createContext(); // Context

@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import PopupDefault from '../PopupDefault';
 
 function PopupUserNotFound({ close, text }) {
