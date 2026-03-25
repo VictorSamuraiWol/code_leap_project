@@ -1,8 +1,9 @@
 .menutools {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
+  position: relative;
   padding: 24px;
 }
 

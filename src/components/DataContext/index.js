@@ -21,6 +21,8 @@ export default function DataProvider({ children }) { // Provider
 
   const [userContent, setUserContent] = useState([])
 
+  const [userContentLikes, setUserContentLikes] = useState([])
+
   const [postApi, setPostApi] = useState(false)
 
   const [putApi, setPutApi] = useState(false)
@@ -32,8 +34,8 @@ export default function DataProvider({ children }) { // Provider
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // Function that uses GET method to request users in the API
-    async function fetchData() {
+    // Functions that uses GET method to request users in the API
+    async function fetchDataCodeLeapNetwork() {
       try {
         setLoading(true)
         const res = await fetch("http://localhost:3001/codeLeapNetwork") // json server
@@ -56,7 +58,31 @@ export default function DataProvider({ children }) { // Provider
           
     }
     
-    fetchData()
+    fetchDataCodeLeapNetwork()
+
+    async function fetchDataCodeLeapNetworkLikes() {
+      try {
+        setLoading(true)
+        const res = await fetch("http://localhost:3001/codeLeapNetworkLikes") // json server
+        const data = await res.json() 
+  
+        if (!data) {
+          throw new Error("Dados inválidos")
+  
+        } else {
+          setUserContentLikes(data)
+          setLoading(false)
+  
+        }
+              
+      } catch (error) {
+          console.error(error)
+  
+      }
+          
+    }
+    
+    fetchDataCodeLeapNetworkLikes()
 
   }, [postApi, putApi, deleteApi])
       
@@ -76,6 +102,7 @@ export default function DataProvider({ children }) { // Provider
     textareaMainScreenPageValue,
     setTextareaMainScreenPageValue,
     userContent,
+    userContentLikes,
     setPostApi,
     setPutApi,
     setDeleteApi,
