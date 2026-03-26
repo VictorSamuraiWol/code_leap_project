@@ -24,7 +24,6 @@
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   border: 1px solid var(--fifth-color);
-
 }
 
 .card-title-edit-delete h1 {
@@ -115,6 +114,7 @@
 @media (max-width: 480px) {
   .card-title-edit-delete h1 {
     font-size: 0.9rem;
+    padding: 16px;
   }
 
   .card-user-date-content {
@@ -130,6 +130,7 @@
 @media (min-width: 481px) {
   .card-title-edit-delete h1 {
     font-size: 0.9rem;
+    padding: 16px;
   }
 
   .card-user-date-content {
@@ -145,6 +146,8 @@
 @media (min-width: 768px) {
   .card-title-edit-delete h1 {
     font-size: 1rem;
+    width: 65%;
+    padding: 18px;  
   }
 
   .card-user-date-content {
@@ -156,6 +159,7 @@
 @media (min-width: 1024px) {
   .card-title-edit-delete h1 {
     font-size: 1.1rem;
+    padding: 20px;
   }
 
   .card-user-date-content {
@@ -167,6 +171,7 @@
 @media (min-width: 1280px) {
   .card-title-edit-delete h1 {
     font-size: 1.2rem;
+    padding: 22px;
   }
 
 }
@@ -174,6 +179,7 @@
 @media (min-width: 1440px) {
   .card-title-edit-delete h1 {
     font-size: 1.3rem;
+    padding: 24px;
   }
 
 }
