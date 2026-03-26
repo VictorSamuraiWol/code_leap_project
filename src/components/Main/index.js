@@ -1,6 +1,6 @@
 import './style.css';
-import InputDefault from '../InputDefault';
 import LabelDefault from '../LabelDefault';
+import InputDefault from '../InputDefault';
 import TextareaDefault from '../TextareaDefault';
 import ButtonDefault from '../ButtonDefault';
 import Cards from '../Cards';
