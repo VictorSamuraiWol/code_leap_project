@@ -14,7 +14,7 @@
 ✅ Welcome! This project aims to create a user message posting application in React, with functionalities to retrieve, create, update, and delete user posts. I am grateful to God for the completion of this project.
 
 <a href="" title="View Project now"> 📟 Click here to view the application</a><br/>
-<a href="" title="View Repository now"> 📜 Click here to view the repository</a>
+<a href="https://github.com/VictorSamuraiWol/code_leap_project" title="View Repository now"> 📜 Click here to view the repository</a>
 
 ## 💻 Technologies used in the project
 

@@ -1,9 +1,8 @@
-import './approutes.css';
 import SignupPage from './pages/SignupPage';
 import MainScreenPage from './pages/MainScreenPage';
 import PageNotFound from './pages/PageNotFound';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DataProvider from './components/DataContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function AppRoutes() {
   return ( 
