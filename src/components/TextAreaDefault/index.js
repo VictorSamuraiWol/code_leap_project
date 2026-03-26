@@ -2,7 +2,7 @@ import './style.css';
 import { DataContext } from '../DataContext';
 import { useContext } from 'react';
 
-function TextareaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, cols, required, setNewContent }) {
+function TextAreaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, cols, required, setNewContent }) {
 
   const { activeMainScreenPage, activeMainScreenModalEdit, setTextareaMainScreenPageValue } = useContext(DataContext)
 
@@ -46,4 +46,4 @@ function TextareaDefault({ placeholder, valueTextarea, id, nameTextarea, rows, c
 
 }
 
-export default TextareaDefault;
+export default TextAreaDefault;

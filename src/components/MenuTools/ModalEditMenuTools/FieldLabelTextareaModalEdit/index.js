@@ -1,13 +1,13 @@
 import './style.css';
 import LabelDefault from '../../../LabelDefault';
-import TextareaDefault from '../../../TextareaDefault';
+import TextAreaDefault from '../../../TextAreaDefault';
 
 function FieldLabelTextareaModalEdit({ valueTextarea, required, setNewContent }) {
 
   return (
     <div className='fieldLabelTextareaModalEdit'>
       <LabelDefault nameLabel='Content' />
-      <TextareaDefault 
+      <TextAreaDefault 
         placeholder='Content Here' 
         valueTextarea={valueTextarea}
         required={required}

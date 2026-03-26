@@ -1,7 +1,7 @@
 import './style.css';
 import LabelDefault from '../LabelDefault';
 import InputDefault from '../InputDefault';
-import TextareaDefault from '../TextareaDefault';
+import TextAreaDefault from '../TextAreaDefault';
 import ButtonDefault from '../ButtonDefault';
 import Cards from '../Cards';
 import PopupUserNotFound from '../Popups/PopupUserNotFound';
@@ -116,7 +116,7 @@ function Main() {
             forLabel='content' 
             nameLabel='Content' 
           />
-          <TextareaDefault
+          <TextAreaDefault
             id='content'
             nameTextarea='content'
             placeholder='Content here'
